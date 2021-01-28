@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    
+
+    <!--OWN Style-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- MDB icon -->
+    <link rel="icon" href="img/BY FOCUS.jpg" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />   <!-- Custom styles -->
+    <style>
+     * {
+  box-sizing: border-box;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+
+
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <header>
+        <!--Navbar-->
+        <div id="navbar"></div>
+  
+        <!--Navbar End-->
+      <br>
+<!--Body-->
+<br><br><br>
+<section>
+    <!-- Material form subscription -->
+<div class="card shadow-lg  mb-5 bg-white" style="padding:10px;margin:10px;">
+
+    <h5 class="card-header bg-danger white-text text-center py-4">
+        <strong>Subscribe</strong>
+    </h5><br>
+    <form >
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">First Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Last Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Country</label>
+        </div>
+        <div class="col-75">
+          <select id="country" name="country" required>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+            <option value="in">India</option>
+          </select>
+        </div>
+      </div><br>
+      <div class="row">
+      <div class="col-25">
+        <label for="phone">Phone Number</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="phone" name="phone" placeholder="Your Number.." required>
+      </div>
+    </div><br>
+    <!--input tag to upload file-->
+    <div class="row">
+      <div class="col-25">
+        <label for="phone">Upload Your Short Film</label>
+      </div>
+      <div class="col-75">
+        <input class="upload-video-file" type='file' name="file"/><br><br>
+
+        <!--div for video's preview-->
+         <div style="display: none;" class='video-prev' class="pull-right">
+               <video height="200" width="300" class="video-preview" controls="controls"/>
+         </div>
+      </div>
+    </div>
+
+      <center> <input type="submit" class="btn btn-danger" name="Apply" value="Apply">
+      </center>
+    
+      
+       
+    </form>
+    <!--Card content-->
+    
+</div>
+<!-- Material form subscription -->
+</section>
+
+<!--Body End-->
+      <!--Footer-->
+<div id="footer"></div>
+
+<!--Footer End-->
+</body>
+
+<!-- MDB -->
+
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script> 
+<!-- Custom scripts -->
+<script type="text/javascript">
+ $(function(){
+    $("#footer").load("footer.html"); 
+  });
+  $(function(){
+    $("#navbar").load("navbar.html"); 
+  });
+  $(function() {
+    $('.upload-video-file').on('change', function(){
+      if (isVideo($(this).val())){
+        $('.video-preview').attr('src', URL.createObjectURL(this.files[0]));
+        $('.video-prev').show();
+      }
+      else
+      {
+        $('.upload-video-file').val('');
+        $('.video-prev').hide();
+        alert("Only video files are allowed to upload.")
+      }
+    });
+});
+
+// If user tries to upload videos other than these extension , it will throw error.
+function isVideo(filename) {
+    var ext = getExtension(filename);
+    switch (ext.toLowerCase()) {
+    case 'm4v':
+    case 'avi':
+    case 'mp4':
+    case 'mov':
+    case 'mpg':
+    case 'mpeg':
+        // etc
+        return true;
+    }
+    return false;
+}
+
+function getExtension(filename) {
+    var parts = filename.split('.');
+    return parts[parts.length - 1];
+}
+</script>
+</html>

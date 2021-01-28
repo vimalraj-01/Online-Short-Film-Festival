@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>ByFocus Media </title>
+    
+
+    <!--OWN Style-->
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css" /> 
+    <link rel="stylesheet" href="css/style.css">
+    <!-- MDB icon -->
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <style>
+     .serif {
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+    </style>
+  </head>
+  
+  <body>
+    <!-- Start your project here-->
+    
+    <header>
+      <!--Navbar-->
+      <div id="navbar"></div>
+
+      <!--Navbar End-->
+    <br><br><br>
+      <!-- Background image -->
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/b1.jpg" alt="Los Angeles" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="img/b4.jpg" alt="Chicago" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="img/b6.jpg" alt="New York" width="1100" height="500">
+          </div>
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      
+      <!-- Background image -->
+    </header>
+<!--Body-->
+<div id="body"></div><br>
+
+<!--Body End-->
+
+
+
+<a href="https://api.whatsapp.com/send?phone=9790156079" target="_blank"  class="wb"><img class="fa-spin my-wb" src="https://img.icons8.com/color/48/000000/whatsapp.png"/>  </a> 
+<!--Footer-->
+<div id="footer"></div>
+
+<!--Footer End-->
+    
+    <!-- End your project here-->
+  </body>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script> 
+  <!-- Custom scripts -->
+  <script type="text/javascript">
+   $(function(){
+      $("#footer").load("footer.html"); 
+    });
+   $(function(){
+      $("#body").load("body.html"); 
+    });
+	
+    $(function(){
+      $("#navbar").load("navbar.html"); 
+    });
+    AOS.init({
+  duration: 1200,
+})
+
+
+  </script>
+</html>
